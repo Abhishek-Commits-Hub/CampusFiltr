@@ -1,0 +1,17 @@
+{
+  "name": "bit-sindri-notice-portal",
+  "version": "1.0.0",
+  "description": "BIT Sindri Student Academic Portal - Redesigned Notice Section",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "bit-sindri",
+    "notice-portal",
+    "academic-notices"
+  ],
+  "author": "BIT Sindri",
+  "license": "ISC"
+}
