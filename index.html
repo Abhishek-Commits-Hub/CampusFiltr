@@ -21,11 +21,11 @@
       <div class="container utility-content">
         <span class="govt-affiliation">Government of Jharkhand | Department of Higher & Technical Education</span>
         <div class="utility-links">
-          <a href="#quick-links">Quick Links</a>
+          <a href="#quick-links" id="btnHeaderQuickLinks">Quick Links</a>
           <span class="sep">|</span>
-          <a href="#student-login">Student ERP Login</a>
+          <a href="#student-login" id="btnHeaderStudentLogin">Student ERP Login</a>
           <span class="sep">|</span>
-          <a href="#helpdesk">Helpdesk: +91-326-2350495</a>
+          <a href="#helpdesk" id="btnHeaderHelpdesk">Helpdesk: +91-326-2350495</a>
         </div>
       </div>
     </div>
@@ -155,6 +155,7 @@
                 <div class="mega-col-title">Academic Services</div>
                 <div class="mega-links-list">
                   <a href="#students/results">Results &amp; Grade Card Portal</a>
+                  <a href="#students/attendance">Attendance Check &amp; Eligibility</a>
                   <a href="#students/syllabus">Curriculum &amp; Syllabus (CBCS)</a>
                   <a href="#students/grievance">Online Grievance / Query Redressal</a>
                   <a href="#students/namelist">Student Name List &amp; Roll Rolls</a>
@@ -376,9 +377,9 @@
             <div class="sidebar-section">
               <div class="sidebar-section-header">
                 <h3 class="sidebar-title">Type</h3>
-                <button type="button" class="btn-sidebar-clear" id="btnClearTypeFilters" title="Clear Type filters">Select all</button>
+                <button type="button" class="btn-sidebar-clear" id="btnClearTypeFilters" title="Clear Type filter">Clear</button>
               </div>
-              <p class="sidebar-help-text">Filter by administrative category:</p>
+              <p class="sidebar-help-text">Filter by administrative category (select one):</p>
 
               <div class="checkbox-group" id="typeCheckboxGroup">
                 <label class="checkbox-item" for="chkExam">
@@ -702,7 +703,7 @@
           </div>
           <div class="portal-card-body" style="display: flex; gap: 24px; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 280px;">
-              <h4 style="font-size: 17px; color: var(--color-navy-dark); margin-bottom: 4px;">Prof. (Dr.) D. K. Singh</h4>
+              <h4 style="font-size: 17px; color: var(--color-navy-dark); margin-bottom: 4px;">Prof. (Dr.) Pankaj Rai</h4>
               <p style="font-size: 12.5px; color: var(--color-text-muted); margin-bottom: 14px;">Director, Birsa Institute of Technology, Sindri</p>
               <p style="margin-bottom: 12px;">"Welcome to Birsa Institute of Technology (BIT) Sindri, an institution rich in heritage, discipline, and distinguished technical accomplishment. Since 1949, our alumni have steered India's industrial backbone — from atomic energy and space exploration to steel, heavy engineering, mining, and software technology."</p>
               <p style="margin-bottom: 12px;">"In today's fast-evolving paradigm of Artificial Intelligence, Robotics, and Green Energy, BIT Sindri is committed to empowering students with rigorous experiential education, modern research laboratories, and strong ethical values. We welcome students, researchers, and industrial partners to join hands in this inspiring journey of technical innovation."</p>
@@ -883,7 +884,7 @@
             <tbody>
               <tr>
                 <td><strong>Director</strong></td>
-                <td>Prof. (Dr.) D. K. Singh</td>
+                <td>Prof. (Dr.) Pankaj Rai</td>
                 <td>director@bitsindri.ac.in</td>
                 <td>+91-326-2350495</td>
               </tr>
@@ -1007,21 +1008,21 @@
             <h4 class="portal-card-title">AICTE Approvals</h4>
             <div class="portal-card-body">
               <p>Extension of Approval (EoA) granted by AICTE New Delhi for Session 2026-27 for 10 undergraduate and 5 postgraduate programs.</p>
-              <button type="button" class="btn-outline-action" style="margin-top: 12px;">Download EoA PDF</button>
+              <button type="button" class="btn-outline-action btn-view-official-doc" data-doc="aicte-eoa" style="margin-top: 12px;">Download EoA PDF</button>
             </div>
           </div>
           <div class="portal-card">
             <h4 class="portal-card-title">University Affiliation</h4>
             <div class="portal-card-body">
               <p>Permanent statutory affiliation under Jharkhand University of Technology (JUT), Ranchi as per Department of Higher Education notification.</p>
-              <button type="button" class="btn-outline-action" style="margin-top: 12px;">View Affiliation Order</button>
+              <button type="button" class="btn-outline-action btn-view-official-doc" data-doc="jut-affiliation" style="margin-top: 12px;">View Affiliation Order</button>
             </div>
           </div>
           <div class="portal-card">
             <h4 class="portal-card-title">Land &amp; Safety Records</h4>
             <div class="portal-card-body">
               <p>Official 450-acre land title deeds, structural stability certifications, and State Fire Department safety clearances.</p>
-              <button type="button" class="btn-outline-action" style="margin-top: 12px;">View Safety Certificate</button>
+              <button type="button" class="btn-outline-action btn-view-official-doc" data-doc="safety-cert" style="margin-top: 12px;">View Safety Certificate</button>
             </div>
           </div>
         </div>
@@ -1626,6 +1627,7 @@
       <!-- Subnav Bar -->
       <nav class="section-subnav-bar" id="studentsSubnav" aria-label="Students Sub Navigation">
         <button type="button" class="subnav-btn active" data-subtab="students-results">Results &amp; Grade Cards</button>
+        <button type="button" class="subnav-btn" data-subtab="students-attendance">Attendance Check System</button>
         <button type="button" class="subnav-btn" data-subtab="students-grievance">Grievance Redressal</button>
         <button type="button" class="subnav-btn" data-subtab="students-activities">Activities &amp; Clubs</button>
         <button type="button" class="subnav-btn" data-subtab="students-facilities">Campus Facilities</button>
@@ -1752,6 +1754,399 @@
             </div>
             <div>
               <button type="button" class="btn-outline-action" onclick="window.print()">Print Official Grade Card</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtab: Academic Attendance Check System (Interactive Tool) -->
+      <div class="subtab-panel" id="students-attendance">
+        <!-- Search & Preset Filter Card -->
+        <div class="attendance-search-card">
+          <div class="attendance-card-header-inner">
+            <div class="att-title-badge-wrap">
+              <span class="doc-official-tag">AICTE &amp; JUT ATTENDANCE MONITORING CELL</span>
+              <h3 class="att-heading-title">Academic Attendance &amp; Examination Eligibility Verification</h3>
+              <p class="att-heading-desc">Verify real-time classroom lecture &amp; laboratory attendance compliance (Clause 4.2: Minimum 75% mandatory)</p>
+            </div>
+            <div class="att-live-status-pill">
+              <span class="pulse-indicator"></span>
+              <span>ERP Biometric Attendance Synced</span>
+            </div>
+          </div>
+
+          <form id="attendanceSearchForm" class="attendance-form-wrapper">
+            <div class="form-row-att">
+              <div class="form-group-custom">
+                <label for="inputAttRollNo">Student Roll / Registration Number</label>
+                <div class="input-with-icon">
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  </svg>
+                  <input type="text" id="inputAttRollNo" placeholder="e.g. 23042, 23015, 23088" value="23042" required>
+                </div>
+              </div>
+              <div class="form-group-custom">
+                <label for="selectAttSem">Semester &amp; Session</label>
+                <select id="selectAttSem">
+                  <option value="1">1st Semester (Session 2026-27)</option>
+                  <option value="2">2nd Semester (Session 2026-27)</option>
+                  <option value="3" selected>3rd Semester (Session 2026-27)</option>
+                  <option value="4">4th Semester (Session 2026-27)</option>
+                  <option value="5">5th Semester (Session 2026-27)</option>
+                  <option value="6">6th Semester (Session 2026-27)</option>
+                  <option value="7">7th Semester (Session 2026-27)</option>
+                  <option value="8">8th Semester (Session 2026-27)</option>
+                </select>
+              </div>
+              <div class="form-group-custom att-btn-wrap">
+                <label>&nbsp;</label>
+                <button type="submit" class="btn-primary-action btn-att-check" id="btnCheckAttendance">
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                  </svg>
+                  Verify Attendance Status
+                </button>
+              </div>
+            </div>
+
+            <!-- Quick Presets -->
+            <div class="att-quick-presets">
+              <span class="preset-label">Quick Student Profiles:</span>
+              <button type="button" class="att-preset-btn active" data-roll="23042" data-sem="3">
+                <span class="preset-dot green"></span> Raja Kumar Shaw (23042 - CSE) [86.8%]
+              </button>
+              <button type="button" class="att-preset-btn" data-roll="23015" data-sem="3">
+                <span class="preset-dot green"></span> Priya Kumari (23015 - IT) [81.5%]
+              </button>
+              <button type="button" class="att-preset-btn" data-roll="22045" data-sem="5">
+                <span class="preset-dot yellow"></span> Vikramaditya (22045 - ME) [75.5%]
+              </button>
+              <button type="button" class="att-preset-btn" data-roll="23088" data-sem="3">
+                <span class="preset-dot red"></span> Rohit Soren (23088 - EE) [67.2% Shortage]
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Attendance Dashboard Container -->
+        <div class="attendance-dashboard" id="attendanceDashboardContainer">
+          <!-- Student Identity Header & Overall Eligibility Banner -->
+          <div class="att-identity-card">
+            <div class="att-student-meta">
+              <div class="att-avatar-badge" id="attAvatar">RK</div>
+              <div class="att-student-info">
+                <div class="att-name-row">
+                  <h4 class="att-student-name" id="attStudentName">RAJA KUMAR SHAW</h4>
+                  <span class="badge-status active" id="attEnrolStatus">Regular Enrolled</span>
+                </div>
+                <div class="att-meta-chips">
+                  <span><strong>Roll No:</strong> <span id="attRollNo">23042</span></span>
+                  <span><strong>Branch:</strong> <span id="attBranch">Computer Science &amp; Engineering</span></span>
+                  <span><strong>Semester:</strong> <span id="attSemText">3rd Semester (CBCS)</span></span>
+                  <span><strong>Academic Advisor:</strong> <span id="attAdvisor">Prof. (Dr.) D. K. Mallick</span></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- JUT Regulatory Eligibility Banner -->
+            <div class="att-eligibility-banner eligible" id="attEligibilityBanner">
+              <div class="banner-icon-col" id="attBannerIcon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="banner-text-col">
+                <div class="banner-heading-wrap">
+                  <h4 class="banner-title" id="attBannerTitle">ELIGIBLE FOR SEMESTER EXAMINATIONS</h4>
+                  <span class="banner-badge" id="attBannerBadge">JUT Norms Satisfied</span>
+                </div>
+                <p class="banner-desc" id="attBannerDesc">
+                  Your aggregate attendance of 86.8% complies with AICTE &amp; JUT Ordinance Clause 4.2 (Minimum 75% required). You are officially cleared to download the examination hall admit card.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overall Key Metric KPI Cards Grid -->
+          <div class="att-kpi-grid">
+            <!-- 1. Overall Percentage -->
+            <div class="att-kpi-card highlight-card">
+              <div class="kpi-top">
+                <span class="kpi-label">Overall Attendance</span>
+                <span class="kpi-tag" id="attKpiTag">Safe Zone</span>
+              </div>
+              <div class="kpi-big-value-wrap">
+                <span class="kpi-big-value text-green" id="attOverallPercent">86.8%</span>
+                <span class="kpi-subtext">Required: 75.0%</span>
+              </div>
+              <div class="kpi-progress-bar-bg">
+                <div class="kpi-progress-bar-fill green" id="attOverallProgressBar" style="width: 86.8%;"></div>
+              </div>
+              <div class="kpi-footnote" id="attPercentFootnote">
+                11.8% above institutional threshold
+              </div>
+            </div>
+
+            <!-- 2. Lectures Held -->
+            <div class="att-kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">Lectures &amp; Labs Held</span>
+                <span class="kpi-icon-badge">
+                  <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor">
+                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="kpi-big-value-wrap">
+                <span class="kpi-big-value" id="attTotalHeld">220</span>
+                <span class="kpi-subtext">Total Scheduled</span>
+              </div>
+              <div class="kpi-sub-breakdown">
+                <span>Theory: <strong id="attTheoryHeld">172</strong></span>
+                <span>Practical: <strong id="attLabHeld">48</strong></span>
+              </div>
+              <div class="kpi-footnote">Working Days: 54 Days</div>
+            </div>
+
+            <!-- 3. Classes Attended -->
+            <div class="att-kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">Attended / Present</span>
+                <span class="kpi-icon-badge green">
+                  <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022z"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="kpi-big-value-wrap">
+                <span class="kpi-big-value text-green" id="attTotalAttended">191</span>
+                <span class="kpi-subtext">Sessions</span>
+              </div>
+              <div class="kpi-sub-breakdown">
+                <span>Theory: <strong id="attTheoryAttended">147</strong></span>
+                <span>Practical: <strong id="attLabAttended">44</strong></span>
+              </div>
+              <div class="kpi-footnote">Biometric + Register validated</div>
+            </div>
+
+            <!-- 4. Margin / Bunk Advisor -->
+            <div class="att-kpi-card margin-card">
+              <div class="kpi-top">
+                <span class="kpi-label" id="attMarginTitle">Safety Margin</span>
+                <span class="kpi-icon-badge" id="attMarginIconBadge">
+                  <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="kpi-big-value-wrap">
+                <span class="kpi-big-value" id="attMarginValue">+34 Classes</span>
+                <span class="kpi-subtext" id="attMarginSub">Permissible Leaves</span>
+              </div>
+              <div class="kpi-progress-bar-bg">
+                <div class="kpi-progress-bar-fill blue" id="attMarginBar" style="width: 70%;"></div>
+              </div>
+              <div class="kpi-footnote" id="attMarginAdvice">
+                Can miss up to 34 more classes without falling below 75%
+              </div>
+            </div>
+          </div>
+
+          <!-- Course-Wise Breakdown Table -->
+          <div class="portal-card" style="margin-top: 24px;">
+            <div class="portal-card-header">
+              <div>
+                <h3 class="portal-card-title">Subject-Wise Attendance Breakdown</h3>
+                <p style="font-size: 12.5px; color: var(--color-text-muted); margin-top: 2px;">
+                  Detailed course-level record compiled by departmental course instructors &amp; HoD
+                </p>
+              </div>
+              <div class="att-table-legend">
+                <span class="legend-item"><span class="legend-dot green"></span> &ge;75% (Eligible)</span>
+                <span class="legend-item"><span class="legend-dot yellow"></span> 65-74.9% (Condonation)</span>
+                <span class="legend-item"><span class="legend-dot red"></span> &lt;65% (Shortage)</span>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="portal-table attendance-table">
+                <thead>
+                  <tr>
+                    <th>Course Code &amp; Title</th>
+                    <th>Type</th>
+                    <th>Faculty In-Charge</th>
+                    <th style="text-align: center;">Held</th>
+                    <th style="text-align: center;">Attended</th>
+                    <th style="text-align: center;">Missed</th>
+                    <th style="min-width: 140px;">Attendance %</th>
+                    <th style="text-align: center;">Eligibility Status</th>
+                    <th>Threshold Margin</th>
+                  </tr>
+                </thead>
+                <tbody id="attendanceSubjectsBody">
+                  <!-- Dynamically populated rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Dual Section: Interactive Attendance Simulator & Recent Biometric Sessions Log -->
+          <div class="portal-grid-2" style="margin-top: 24px;">
+            <!-- Interactive "What-If" Attendance Calculator -->
+            <div class="portal-card">
+              <div class="portal-card-header">
+                <div>
+                  <h4 class="portal-card-title">Interactive "What-If" Attendance Simulator</h4>
+                  <p style="font-size: 12px; color: var(--color-text-muted);">Predict future attendance percentage before planning leave or catch-up</p>
+                </div>
+                <span class="badge-status info">Smart Forecast</span>
+              </div>
+              <div class="portal-card-body">
+                <div class="sim-mode-toggle">
+                  <button type="button" class="sim-mode-btn active" id="simModeAttend">Attend Next Classes</button>
+                  <button type="button" class="sim-mode-btn" id="simModeMiss">Miss / Skip Classes</button>
+                </div>
+                <div class="sim-slider-group">
+                  <div class="sim-slider-label-row">
+                    <span id="simSliderLabel">Upcoming Consecutive Lectures to Attend:</span>
+                    <strong class="sim-slider-val" id="simSliderValDisplay">10 Classes</strong>
+                  </div>
+                  <input type="range" min="1" max="40" value="10" class="sim-range-input" id="simRangeInput">
+                  <div class="sim-range-marks">
+                    <span>1</span>
+                    <span>10</span>
+                    <span>20</span>
+                    <span>30</span>
+                    <span>40</span>
+                  </div>
+                </div>
+
+                <!-- Simulation Output Box -->
+                <div class="sim-result-box" id="simResultBox">
+                  <div class="sim-res-header">
+                    <span>Projected Future Attendance:</span>
+                    <strong class="sim-projected-num" id="simProjectedNum">88.3%</strong>
+                  </div>
+                  <div class="sim-comparison-row">
+                    <span>Current: <strong id="simCurrentNum">86.8%</strong></span>
+                    <span class="sim-delta-badge positive" id="simDeltaBadge">+1.5% Gain</span>
+                    <span>Projected: <strong id="simProjectedSummary">88.3%</strong></span>
+                  </div>
+                  <div class="sim-msg" id="simMsg">
+                    Attending the next 10 consecutive lectures will elevate your attendance by +1.5%, reinforcing your secure examination eligibility.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Biometric Attendance Punch Register Log -->
+            <div class="portal-card">
+              <div class="portal-card-header">
+                <div>
+                  <h4 class="portal-card-title">Recent Lecture Sessions &amp; Biometric Log</h4>
+                  <p style="font-size: 12px; color: var(--color-text-muted);">Last 8 automated biometric punches recorded in classroom sensors</p>
+                </div>
+                <span class="badge-status active">Live Feed</span>
+              </div>
+              <div class="portal-card-body" style="padding: 0;">
+                <div class="recent-punches-list" id="recentPunchesList">
+                  <!-- Dynamically populated recent punch items -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Regulatory Advisory & Action Tools -->
+          <div class="portal-card" style="margin-top: 24px; background: #F8FAFC; border: 1px solid var(--color-border-light);">
+            <div class="portal-card-body">
+              <div class="att-reg-footer-grid">
+                <div>
+                  <h4 style="font-size: 13.5px; color: var(--color-navy-dark); font-weight: 700; margin-bottom: 6px;">
+                    JUT &amp; BIT Sindri Attendance Ordinance (Summary)
+                  </h4>
+                  <ul style="font-size: 12px; color: var(--color-text-body); line-height: 1.6; padding-left: 18px;">
+                    <li><strong>Clause 4.2.1:</strong> Every student must attend at least 75% of scheduled lectures and practical sessions in each registered course.</li>
+                    <li><strong>Clause 4.2.2:</strong> Condonation up to 10% (i.e. between 65% and 74.9%) may be granted by the Director / Dean of Academic Affairs only on valid hospital certified medical grounds or college deputation in sports / technical competitions.</li>
+                    <li><strong>Clause 4.2.3:</strong> Students possessing &lt;65% attendance cannot be condoned under any circumstances and will be debarred from writing semester end exams.</li>
+                  </ul>
+                </div>
+                <div class="att-action-buttons-group">
+                  <button type="button" class="btn-primary-action" id="btnPrintAttendanceSlip">
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+                      <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                      <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                    </svg>
+                    Print Official Attendance Slip
+                  </button>
+                  <button type="button" class="btn-outline-action btn-jump-to-attendance-grievance" id="btnApplyCondonation">
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+                      <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                      <path d="M4 4h8v2H4V4zm0 3h8v2H4V7zm0 3h5v2H4v-2z"/>
+                    </svg>
+                    Apply for Medical / Condonation Leave
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Official Printable Attendance Slip (Modal dialog) -->
+        <div class="modal-backdrop" id="modalAttendanceSlipBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalAttSlipTitle" hidden>
+          <div class="modal-dialog" style="max-width: 820px;">
+            <div class="modal-header">
+              <div class="modal-title-group">
+                <span class="doc-official-tag">BIT SINDRI ACADEMIC CELL</span>
+                <h3 class="modal-doc-title" id="modalAttSlipTitle">Official Attendance &amp; Eligibility Certificate</h3>
+              </div>
+              <button type="button" class="btn-modal-close" id="btnModalAttSlipClose" aria-label="Close modal">✕</button>
+            </div>
+            <div class="modal-body" id="modalAttSlipBody">
+              <div class="attendance-print-slip" id="attendancePrintSlip">
+                <div class="slip-header">
+                  <h3>JHARKHAND UNIVERSITY OF TECHNOLOGY, RANCHI</h3>
+                  <p>Birsa Institute of Technology, Sindri · Office of the Dean (Academic Affairs)</p>
+                  <p class="slip-sub">OFFICIAL ATTENDANCE COMPLIANCE &amp; ADMIT CARD ELIGIBILITY CERTIFICATE</p>
+                </div>
+                <div class="slip-meta-grid" id="slipMetaGrid">
+                  <!-- Dynamically populated -->
+                </div>
+                <div class="table-responsive">
+                  <table class="portal-table" id="slipTable">
+                    <!-- Dynamically populated table -->
+                  </table>
+                </div>
+                <div class="slip-eligibility-stamp" id="slipEligibilityStamp">
+                  <!-- Official stamp -->
+                </div>
+                <div class="slip-signatures">
+                  <div class="sig-block">
+                    <div class="sig-line"></div>
+                    <span>Dealing Assistant (Attendance Cell)</span>
+                  </div>
+                  <div class="sig-block">
+                    <div class="sig-line"></div>
+                    <span>Head of the Department</span>
+                  </div>
+                  <div class="sig-block">
+                    <div class="sig-line"></div>
+                    <span>Dean (Academic Affairs), BIT Sindri</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn-modal-action" id="btnAttSlipPrintDirect" onclick="window.print()">
+                <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor">
+                  <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                  <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                </svg>
+                Print Official Certificate
+              </button>
+              <button type="button" class="btn-modal-action primary" id="btnModalAttSlipDone">Close Preview</button>
             </div>
           </div>
         </div>
@@ -1928,6 +2323,12 @@
                   <td><button type="button" class="btn-outline-action btn-dl-syllabus" data-branch="IT">Download Syllabus PDF</button></td>
                 </tr>
                 <tr>
+                  <td>Electronics &amp; Communication Engg</td>
+                  <td>B.Tech (JUT CBCS Scheme)</td>
+                  <td>1st to 8th Semester</td>
+                  <td><button type="button" class="btn-outline-action btn-dl-syllabus" data-branch="ECE">Download Syllabus PDF</button></td>
+                </tr>
+                <tr>
                   <td>Electrical Engineering</td>
                   <td>B.Tech (JUT CBCS Scheme)</td>
                   <td>1st to 8th Semester</td>
@@ -1944,6 +2345,30 @@
                   <td>B.Tech (JUT CBCS Scheme)</td>
                   <td>1st to 8th Semester</td>
                   <td><button type="button" class="btn-outline-action btn-dl-syllabus" data-branch="CE">Download Syllabus PDF</button></td>
+                </tr>
+                <tr>
+                  <td>Metallurgical Engineering</td>
+                  <td>B.Tech (JUT CBCS Scheme)</td>
+                  <td>1st to 8th Semester</td>
+                  <td><button type="button" class="btn-outline-action btn-dl-syllabus" data-branch="META">Download Syllabus PDF</button></td>
+                </tr>
+                <tr>
+                  <td>Chemical Engineering</td>
+                  <td>B.Tech (JUT CBCS Scheme)</td>
+                  <td>1st to 8th Semester</td>
+                  <td><button type="button" class="btn-outline-action btn-dl-syllabus" data-branch="CHEM">Download Syllabus PDF</button></td>
+                </tr>
+                <tr>
+                  <td>Mining Engineering</td>
+                  <td>B.Tech (JUT CBCS Scheme)</td>
+                  <td>1st to 8th Semester</td>
+                  <td><button type="button" class="btn-outline-action btn-dl-syllabus" data-branch="MINE">Download Syllabus PDF</button></td>
+                </tr>
+                <tr>
+                  <td>Production &amp; Industrial Engg</td>
+                  <td>B.Tech (JUT CBCS Scheme)</td>
+                  <td>1st to 8th Semester</td>
+                  <td><button type="button" class="btn-outline-action btn-dl-syllabus" data-branch="PROD">Download Syllabus PDF</button></td>
                 </tr>
               </tbody>
             </table>
@@ -2564,7 +2989,7 @@
             <p><strong>Official Email:</strong> tap@bitsindri.ac.in | tpo@bitsindri.ac.in</p>
             <p><strong>Phone:</strong> +91-326-2350495 (Ext: 212)</p>
             <div style="margin-top: 14px;">
-              <button type="button" class="btn-primary-action">Download Placement Brochure 2026-27 (PDF)</button>
+              <button type="button" class="btn-primary-action btn-view-brochure" id="btnDlPlacementBrochure">Download Placement Brochure 2026-27 (PDF)</button>
             </div>
           </div>
         </div>
@@ -2838,6 +3263,231 @@
   </div>
 
   <!-- ========================================================
+       MODAL: B.TECH CURRICULUM & SYLLABUS VIEWER
+       ======================================================== -->
+  <div class="modal-backdrop" id="modalSyllabusBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalSyllabusTitle" hidden>
+    <div class="modal-dialog" style="max-width: 820px;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="doc-official-tag">JHARKHAND UNIVERSITY OF TECHNOLOGY · CBCS SCHEME</span>
+          <h3 class="modal-doc-title" id="modalSyllabusTitle">Curriculum &amp; Course Syllabus</h3>
+        </div>
+        <button type="button" class="btn-modal-close" id="btnModalSyllabusClose" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" id="modalSyllabusBody">
+        <!-- Dynamically populated syllabus document -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal-action" onclick="window.print()">
+          <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor">
+            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+            <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+          </svg>
+          Print Syllabus
+        </button>
+        <button type="button" class="btn-modal-action primary" id="btnModalSyllabusDone">Close Syllabus</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL: PLACEMENT BROCHURE 2026-27 VIEWER
+       ======================================================== -->
+  <div class="modal-backdrop" id="modalBrochureBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalBrochureTitle" hidden>
+    <div class="modal-dialog" style="max-width: 860px;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="doc-official-tag">CAREER DEVELOPMENT CENTRE (CDC) · BIT SINDRI</span>
+          <h3 class="modal-doc-title" id="modalBrochureTitle">Campus Placement Brochure 2026-2027</h3>
+        </div>
+        <button type="button" class="btn-modal-close" id="btnModalBrochureClose" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" id="modalBrochureBody">
+        <!-- Dynamically populated placement brochure document -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal-action" onclick="window.print()">
+          <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor">
+            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+            <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+          </svg>
+          Print Brochure
+        </button>
+        <button type="button" class="btn-modal-action primary" id="btnModalBrochureDone">Close Brochure</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL: STUDENT ERP SAMARTH LOGIN
+       ======================================================== -->
+  <div class="modal-backdrop" id="modalErpLoginBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalErpLoginTitle" hidden>
+    <div class="modal-dialog" style="max-width: 500px;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="doc-official-tag">SAMARTH E-GOV INTEGRATED ERP</span>
+          <h3 class="modal-doc-title" id="modalErpLoginTitle">Student ERP Portal Login</h3>
+        </div>
+        <button type="button" class="btn-modal-close" id="btnModalErpClose" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="erpLoginForm">
+          <div class="form-group-custom" style="margin-bottom: 12px;">
+            <label for="erpRoll">Institute Roll No / JUT Registration Number</label>
+            <input type="text" id="erpRoll" placeholder="e.g. 23042" value="23042" required>
+          </div>
+          <div class="form-group-custom" style="margin-bottom: 12px;">
+            <label for="erpDob">Date of Birth / Password</label>
+            <input type="password" id="erpDob" placeholder="••••••••••••" value="Bitsindri@2026" required>
+          </div>
+          <div class="form-group-custom" style="margin-bottom: 12px;">
+            <label for="erpProgram">Academic Program</label>
+            <select id="erpProgram">
+              <option value="btech">Bachelor of Technology (B.Tech 4-Year)</option>
+              <option value="mtech">Master of Technology (M.Tech)</option>
+              <option value="phd">Doctor of Philosophy (Ph.D)</option>
+            </select>
+          </div>
+          <div class="form-group-custom" style="margin-bottom: 16px;">
+            <label for="erpCaptcha">Security Verification: <span style="background: #E2E8F0; padding: 2px 6px; font-family: monospace; font-weight: bold; border-radius: 3px;">7 K 9 M</span></label>
+            <input type="text" id="erpCaptcha" placeholder="Enter characters above" value="7K9M" required>
+          </div>
+          <div id="erpLoginFeedback" style="display: none; margin-bottom: 12px; padding: 10px; border-radius: var(--radius-sm); font-size: 13px;"></div>
+          <button type="submit" class="btn-primary-action" style="width: 100%;">Authenticate &amp; Access Student Dashboard</button>
+        </form>
+        <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--color-border-light); font-size: 12px; color: var(--color-text-muted); text-align: center;">
+          New admission? <a href="#academics/admissions" class="modal-inline-link" id="linkErpHelp">Check Admission Procedure</a> · Forgot credentials? Contact Computer Center.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal-action" id="btnModalErpDone">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL: INSTITUTIONAL HELPDESK & EMERGENCY DIRECTORY
+       ======================================================== -->
+  <div class="modal-backdrop" id="modalHelpdeskBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalHelpdeskTitle" hidden>
+    <div class="modal-dialog" style="max-width: 650px;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="doc-official-tag">INSTITUTIONAL DIRECTORY &amp; EMERGENCY SUPPORT</span>
+          <h3 class="modal-doc-title" id="modalHelpdeskTitle">BIT Sindri Campus Helplines</h3>
+        </div>
+        <button type="button" class="btn-modal-close" id="btnModalHelpdeskClose" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="portal-grid-2" style="margin-bottom: 16px;">
+          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 12px; border-radius: var(--radius-sm);">
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: #64748B;">Central Exchange</div>
+            <div style="font-size: 15px; font-weight: 700; color: #0F172A; margin-top: 2px;">+91-326-2350495</div>
+            <div style="font-size: 11.5px; color: #64748B;">PABX 20 Lines · Fax: +91-326-2350729</div>
+          </div>
+          <div style="background: #FEF2F2; border: 1px solid #FECACA; padding: 12px; border-radius: var(--radius-sm);">
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: #DC2626;">Campus Ambulance / Dispensary</div>
+            <div style="font-size: 15px; font-weight: 700; color: #B91C1C; margin-top: 2px;">+91-326-2350495 (Ext: 102)</div>
+            <div style="font-size: 11.5px; color: #B91C1C;">24x7 Emergency Health Care Center</div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="portal-table" style="font-size: 12.5px;">
+            <thead>
+              <tr>
+                <th>Office / Section</th>
+                <th>Official Email</th>
+                <th>Intercom</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Academic Affairs (Admissions/Verification)</strong></td>
+                <td>academics@bitsindri.ac.in</td>
+                <td>Ext: 204</td>
+              </tr>
+              <tr>
+                <td><strong>Examination Section (JUT Cell)</strong></td>
+                <td>exam@bitsindri.ac.in</td>
+                <td>Ext: 206</td>
+              </tr>
+              <tr>
+                <td><strong>Dean of Student Welfare (Hostels &amp; Mess)</strong></td>
+                <td>dsw@bitsindri.ac.in</td>
+                <td>Ext: 210</td>
+              </tr>
+              <tr>
+                <td><strong>Career Development Centre (T&amp;P)</strong></td>
+                <td>tap@bitsindri.ac.in</td>
+                <td>Ext: 212</td>
+              </tr>
+              <tr>
+                <td><strong>Anti-Ragging Squad 24x7 Helpline</strong></td>
+                <td>antiragging@bitsindri.ac.in</td>
+                <td>1800-180-5522</td>
+              </tr>
+              <tr>
+                <td><strong>Campus Security Control Room</strong></td>
+                <td>security@bitsindri.ac.in</td>
+                <td>Ext: 100</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal-action primary" id="btnModalHelpdeskDone">Close Directory</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL: QUICK LINKS CENTRAL LAUNCHPAD
+       ======================================================== -->
+  <div class="modal-backdrop" id="modalQuickLinksBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalQuickLinksTitle" hidden>
+    <div class="modal-dialog" style="max-width: 600px;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="doc-official-tag">CENTRAL NAVIGATION LAUNCHPAD</span>
+          <h3 class="modal-doc-title" id="modalQuickLinksTitle">Quick Access Portals</h3>
+        </div>
+        <button type="button" class="btn-modal-close" id="btnModalQuickClose" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="portal-grid-2" style="gap: 10px;">
+          <a href="#students/attendance" class="portal-card qk-card-link" style="padding: 12px; text-decoration: none; border-left: 3px solid #16A34A;">
+            <strong style="color: #0F172A; font-size: 13.5px; display: block;">Attendance Check System</strong>
+            <span style="font-size: 12px; color: #64748B;">Verify 75% AICTE/JUT exam eligibility &amp; punch logs</span>
+          </a>
+          <a href="#students/results" class="portal-card qk-card-link" style="padding: 12px; text-decoration: none; border-left: 3px solid #2563EB;">
+            <strong style="color: #0F172A; font-size: 13.5px; display: block;">JUT Grade Card Lookup</strong>
+            <span style="font-size: 12px; color: #64748B;">Instant semester SGPA &amp; marksheet verification</span>
+          </a>
+          <a href="#students/syllabus" class="portal-card qk-card-link" style="padding: 12px; text-decoration: none; border-left: 3px solid #0891B2;">
+            <strong style="color: #0F172A; font-size: 13.5px; display: block;">Curriculum &amp; Syllabus</strong>
+            <span style="font-size: 12px; color: #64748B;">160-Credit CBCS schemes for 10 branches</span>
+          </a>
+          <a href="#students/grievance" class="portal-card qk-card-link" style="padding: 12px; text-decoration: none; border-left: 3px solid #D97706;">
+            <strong style="color: #0F172A; font-size: 13.5px; display: block;">Online Grievance Redressal</strong>
+            <span style="font-size: 12px; color: #64748B;">Direct submission to Dean Office with tracking token</span>
+          </a>
+          <a href="#academics/fee-structure" class="portal-card qk-card-link" style="padding: 12px; text-decoration: none; border-left: 3px solid #7C3AED;">
+            <strong style="color: #0F172A; font-size: 13.5px; display: block;">Fee Structure &amp; Calculator</strong>
+            <span style="font-size: 12px; color: #64748B;">Subsidized state fees for General, TFW &amp; SC/ST</span>
+          </a>
+          <a href="#notification" class="portal-card qk-card-link" style="padding: 12px; text-decoration: none; border-left: 3px solid #DC2626;">
+            <strong style="color: #0F172A; font-size: 13.5px; display: block;">Holiday Notifications</strong>
+            <span style="font-size: 12px; color: #64748B;">Common holiday orders across all academic years</span>
+          </a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal-action primary" id="btnModalQuickDone">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
        FOOTER (PRESERVED / UNCHANGED)
        Academic Portal Footer
        ======================================================== -->
@@ -2852,10 +3502,10 @@
       <div class="footer-col">
         <h4>Important Portals</h4>
         <ul>
-          <li><a href="#jut">Jharkhand University of Technology</a></li>
-          <li><a href="#aicte">AICTE Approval Portal</a></li>
-          <li><a href="#scholarships">E-Kalyan Jharkhand Scholarship</a></li>
-          <li><a href="#library">Central Library Portal (OPAC)</a></li>
+          <li><a href="#administration/mandatory-disclose" class="footer-portal-link">Jharkhand University of Technology (JUT)</a></li>
+          <li><a href="#administration/mandatory-disclose" class="footer-portal-link">AICTE Approval Portal (EoA)</a></li>
+          <li><a href="#students/scholarships" class="footer-portal-link">E-Kalyan Jharkhand Scholarship</a></li>
+          <li><a href="#students/e-journals" class="footer-portal-link">Central Library Portal (OPAC &amp; IEEE)</a></li>
         </ul>
       </div>
       <div class="footer-col">
