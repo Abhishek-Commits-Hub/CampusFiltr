@@ -1,0 +1,797 @@
+{
+  "buttons": [
+    {
+      "id": "navbarMobileToggle",
+      "className": "navbar-mobile-toggle",
+      "text": "(icon/empty)",
+      "line": 55
+    },
+    {
+      "id": "btnRefreshNotices",
+      "className": "btn-refresh",
+      "text": "Sync Notices",
+      "line": 259
+    },
+    {
+      "id": "btnMobileFilterToggle",
+      "className": "btn-mobile-filter-toggle",
+      "text": "Filters 0",
+      "line": 266
+    },
+    {
+      "id": null,
+      "className": "pill-opt active",
+      "text": "B.Tech",
+      "line": 298
+    },
+    {
+      "id": null,
+      "className": "pill-opt",
+      "text": "M.Tech",
+      "line": 299
+    },
+    {
+      "id": null,
+      "className": "pill-opt",
+      "text": "Ph.D",
+      "line": 300
+    },
+    {
+      "id": null,
+      "className": "pill-opt active",
+      "text": "Regular",
+      "line": 357
+    },
+    {
+      "id": null,
+      "className": "pill-opt",
+      "text": "Lateral Entry",
+      "line": 358
+    },
+    {
+      "id": "btnClearTypeFilters",
+      "className": "btn-sidebar-clear",
+      "text": "Select all",
+      "line": 380
+    },
+    {
+      "id": "btnResetFilters",
+      "className": "btn-reset-filters",
+      "text": "Reset filters",
+      "line": 485
+    },
+    {
+      "id": "btnClearSearch",
+      "className": "btn-clear-search",
+      "text": "✕",
+      "line": 538
+    },
+    {
+      "id": "btnClearAllTags",
+      "className": "btn-clear-all-tags",
+      "text": "Clear all",
+      "line": 552
+    },
+    {
+      "id": null,
+      "className": "subnav-btn active",
+      "text": "BIT Sindri History",
+      "line": 611
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Vision &amp; Mission",
+      "line": 612
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Director's Message",
+      "line": 613
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Vision 2030",
+      "line": 614
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Visit BIT Sindri",
+      "line": 615
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Logo &amp; Motto",
+      "line": 616
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Institutional Activities",
+      "line": 617
+    },
+    {
+      "id": null,
+      "className": "subnav-btn active",
+      "text": "Offices &amp; Directory",
+      "line": 864
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Tenders &amp; Quotations",
+      "line": 865
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Mandatory Disclosures",
+      "line": 866
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "TEQIP Phase III",
+      "line": 867
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Right to Information (RTI)",
+      "line": 868
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "New Infrastructure",
+      "line": 869
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-view-tender",
+      "text": "View NIT",
+      "line": 965
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-view-tender",
+      "text": "View NIT",
+      "line": 973
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-view-tender",
+      "text": "View NIT",
+      "line": 981
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-view-tender",
+      "text": "View NIT",
+      "line": 989
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-view-tender",
+      "text": "View NIT",
+      "line": 997
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action",
+      "text": "Download EoA PDF",
+      "line": 1011
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action",
+      "text": "View Affiliation Order",
+      "line": 1018
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action",
+      "text": "View Safety Certificate",
+      "line": 1025
+    },
+    {
+      "id": null,
+      "className": "subnav-btn active",
+      "text": "Departments (15)",
+      "line": 1136
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Admissions &amp; Cutoffs",
+      "line": 1137
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Fee Structure &amp; Calculator",
+      "line": 1138
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Academic Calendar",
+      "line": 1139
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Siemens Center of Excellence",
+      "line": 1140
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Academic Committees",
+      "line": 1141
+    },
+    {
+      "id": null,
+      "className": "pill-opt active filter-dept-cat",
+      "text": "All Departments (15)",
+      "line": 1148
+    },
+    {
+      "id": null,
+      "className": "pill-opt filter-dept-cat",
+      "text": "Core Engineering (6)",
+      "line": 1149
+    },
+    {
+      "id": null,
+      "className": "pill-opt filter-dept-cat",
+      "text": "Circuital &amp; IT (4)",
+      "line": 1150
+    },
+    {
+      "id": null,
+      "className": "pill-opt filter-dept-cat",
+      "text": "Sciences &amp; Humanities (5)",
+      "line": 1151
+    },
+    {
+      "id": "cse",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1168
+    },
+    {
+      "id": "it",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1183
+    },
+    {
+      "id": "ece",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1198
+    },
+    {
+      "id": "ee",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1213
+    },
+    {
+      "id": "mech",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1228
+    },
+    {
+      "id": "civil",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1243
+    },
+    {
+      "id": "meta",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1258
+    },
+    {
+      "id": "chem",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1273
+    },
+    {
+      "id": "mining",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1288
+    },
+    {
+      "id": "prod",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1303
+    },
+    {
+      "id": "physics",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1317
+    },
+    {
+      "id": "chemistry",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1331
+    },
+    {
+      "id": "math",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1345
+    },
+    {
+      "id": "geology",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1359
+    },
+    {
+      "id": "humanities",
+      "className": "btn-primary-action btn-open-dept-profile",
+      "text": "View Department Profile",
+      "line": 1373
+    },
+    {
+      "id": null,
+      "className": "btn-primary-action btn-jump-to-grievance",
+      "text": "Go to Online Grievance Portal &rarr;",
+      "line": 1592
+    },
+    {
+      "id": null,
+      "className": "subnav-btn active",
+      "text": "Results &amp; Grade Cards",
+      "line": 1629
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Attendance Check System",
+      "line": 1630
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Grievance Redressal",
+      "line": 1631
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Activities &amp; Clubs",
+      "line": 1632
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Campus Facilities",
+      "line": 1633
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Curriculum &amp; Syllabus",
+      "line": 1634
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Forms &amp; Downloads",
+      "line": 1635
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "e-Journals &amp; Library",
+      "line": 1636
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Scholarships &amp; Aid",
+      "line": 1637
+    },
+    {
+      "id": "btnFetchResult",
+      "className": "btn-primary-action",
+      "text": "Verify &amp; Display Grade Sheet",
+      "line": 1668
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action",
+      "text": "Print Official Grade Card",
+      "line": 1756
+    },
+    {
+      "id": "btnCheckAttendance",
+      "className": "btn-primary-action btn-att-check",
+      "text": "Verify Attendance Status",
+      "line": 1804
+    },
+    {
+      "id": null,
+      "className": "att-preset-btn active",
+      "text": "Raja Kumar Shaw (23042 - CSE) [86.8%]",
+      "line": 1816
+    },
+    {
+      "id": null,
+      "className": "att-preset-btn",
+      "text": "Priya Kumari (23015 - IT) [81.5%]",
+      "line": 1819
+    },
+    {
+      "id": null,
+      "className": "att-preset-btn",
+      "text": "Vikramaditya (22045 - ME) [75.5%]",
+      "line": 1822
+    },
+    {
+      "id": null,
+      "className": "att-preset-btn",
+      "text": "Rohit Soren (23088 - EE) [67.2% Shortage]",
+      "line": 1825
+    },
+    {
+      "id": "simModeAttend",
+      "className": "sim-mode-btn active",
+      "text": "Attend Next Classes",
+      "line": 2009
+    },
+    {
+      "id": "simModeMiss",
+      "className": "sim-mode-btn",
+      "text": "Miss / Skip Classes",
+      "line": 2010
+    },
+    {
+      "id": "btnPrintAttendanceSlip",
+      "className": "btn-primary-action",
+      "text": "Print Official Attendance Slip",
+      "line": 2077
+    },
+    {
+      "id": "btnApplyCondonation",
+      "className": "btn-outline-action btn-jump-to-attendance-grievance",
+      "text": "Apply for Medical / Condonation Leave",
+      "line": 2084
+    },
+    {
+      "id": "btnModalAttSlipClose",
+      "className": "btn-modal-close",
+      "text": "✕",
+      "line": 2105
+    },
+    {
+      "id": "btnAttSlipPrintDirect",
+      "className": "btn-modal-action",
+      "text": "Print Official Certificate",
+      "line": 2142
+    },
+    {
+      "id": "btnModalAttSlipDone",
+      "className": "btn-modal-action primary",
+      "text": "Close Preview",
+      "line": 2149
+    },
+    {
+      "id": "btnSubmitGrievance",
+      "className": "btn-primary-action",
+      "text": "Submit Grievance to Dean Office",
+      "line": 2200
+    },
+    {
+      "id": "btnTrackGrievance",
+      "className": "btn-primary-action",
+      "text": "Track",
+      "line": 2211
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-dl-syllabus",
+      "text": "Download Syllabus PDF",
+      "line": 2317
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-dl-syllabus",
+      "text": "Download Syllabus PDF",
+      "line": 2323
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-dl-syllabus",
+      "text": "Download Syllabus PDF",
+      "line": 2329
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-dl-syllabus",
+      "text": "Download Syllabus PDF",
+      "line": 2335
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-dl-syllabus",
+      "text": "Download Syllabus PDF",
+      "line": 2341
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-view-proforma",
+      "text": "Preview Proforma",
+      "line": 2356
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-view-proforma",
+      "text": "Preview Proforma",
+      "line": 2363
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action btn-view-proforma",
+      "text": "Preview Proforma",
+      "line": 2370
+    },
+    {
+      "id": null,
+      "className": "subnav-btn active",
+      "text": "NIRF Ranking Data",
+      "line": 2450
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "NAAC Accreditation",
+      "line": 2451
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "NBA &amp; Approvals",
+      "line": 2452
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "ARIIA &amp; IIRF",
+      "line": 2453
+    },
+    {
+      "id": null,
+      "className": "subnav-btn active",
+      "text": "Alma Connect Portal",
+      "line": 2590
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "BITSAA Chapters",
+      "line": 2591
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Endowment Fund &amp; Giving",
+      "line": 2592
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Distinguished Alumni",
+      "line": 2593
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Alumni Guest House Booking",
+      "line": 2594
+    },
+    {
+      "id": "btnSimulatePledge",
+      "className": "btn-primary-action",
+      "text": "Make an Alumni Contribution Pledge",
+      "line": 2658
+    },
+    {
+      "id": null,
+      "className": "btn-primary-action",
+      "text": "Submit Guest House Booking Request",
+      "line": 2733
+    },
+    {
+      "id": null,
+      "className": "subnav-btn active",
+      "text": "CDC Overview",
+      "line": 2775
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Placement Statistics",
+      "line": 2776
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Major Recruiters",
+      "line": 2777
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Internships &amp; Training",
+      "line": 2778
+    },
+    {
+      "id": null,
+      "className": "subnav-btn",
+      "text": "Brochure &amp; TPO Team",
+      "line": 2779
+    },
+    {
+      "id": null,
+      "className": "btn-primary-action",
+      "text": "Download Placement Brochure 2026-27 (PDF)",
+      "line": 2962
+    },
+    {
+      "id": null,
+      "className": "pill-opt active filter-holiday-cat",
+      "text": "All Holidays (19)",
+      "line": 3024
+    },
+    {
+      "id": null,
+      "className": "pill-opt filter-holiday-cat",
+      "text": "Upcoming Breaks (16)",
+      "line": 3025
+    },
+    {
+      "id": null,
+      "className": "pill-opt filter-holiday-cat",
+      "text": "Vacation Breaks (3)",
+      "line": 3026
+    },
+    {
+      "id": null,
+      "className": "pill-opt filter-holiday-cat",
+      "text": "State Festivals (4)",
+      "line": 3027
+    },
+    {
+      "id": null,
+      "className": "pill-opt filter-holiday-cat",
+      "text": "Gazetted National (12)",
+      "line": 3028
+    },
+    {
+      "id": null,
+      "className": "btn-outline-action",
+      "text": "Print Schedule",
+      "line": 3031
+    },
+    {
+      "id": "btnModalHolidayClose",
+      "className": "btn-modal-close",
+      "text": "✕",
+      "line": 3084
+    },
+    {
+      "id": null,
+      "className": "btn-modal-action",
+      "text": "Print Official Circular",
+      "line": 3090
+    },
+    {
+      "id": "btnModalHolidayDone",
+      "className": "btn-modal-action primary",
+      "text": "Close Circular",
+      "line": 3091
+    },
+    {
+      "id": "btnModalDeptClose",
+      "className": "btn-modal-close",
+      "text": "✕",
+      "line": 3106
+    },
+    {
+      "id": "btnModalDeptDone",
+      "className": "btn-modal-action primary",
+      "text": "Close Profile",
+      "line": 3112
+    },
+    {
+      "id": "btnModalTenderClose",
+      "className": "btn-modal-close",
+      "text": "✕",
+      "line": 3127
+    },
+    {
+      "id": null,
+      "className": "btn-modal-action",
+      "text": "Print NIT Summary",
+      "line": 3133
+    },
+    {
+      "id": "btnModalTenderDone",
+      "className": "btn-modal-action primary",
+      "text": "Download Full NIT (Simulated)",
+      "line": 3134
+    },
+    {
+      "id": "btnModalProformaClose",
+      "className": "btn-modal-close",
+      "text": "✕",
+      "line": 3149
+    },
+    {
+      "id": null,
+      "className": "btn-modal-action",
+      "text": "Print Official Form",
+      "line": 3155
+    },
+    {
+      "id": "btnModalProformaDone",
+      "className": "btn-modal-action primary",
+      "text": "Close Form",
+      "line": 3156
+    },
+    {
+      "id": "btnModalPledgeClose",
+      "className": "btn-modal-close",
+      "text": "✕",
+      "line": 3171
+    },
+    {
+      "id": "btnSubmitPledge",
+      "className": "btn-primary-action",
+      "text": "Submit Pledge",
+      "line": 3201
+    },
+    {
+      "id": "btnModalPledgeDone",
+      "className": "btn-outline-action",
+      "text": "Close",
+      "line": 3202
+    },
+    {
+      "id": "btnModalClose",
+      "className": "btn-modal-close",
+      "text": "✕",
+      "line": 3217
+    },
+    {
+      "id": "btnModalPrint",
+      "className": "btn-modal-action",
+      "text": "Print Circular",
+      "line": 3223
+    },
+    {
+      "id": "btnModalDone",
+      "className": "btn-modal-action primary",
+      "text": "Close Preview",
+      "line": 3230
+    }
+  ],
+  "aButtons": []
+}

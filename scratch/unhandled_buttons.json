@@ -1,0 +1,142 @@
+[
+  {
+    "id": null,
+    "className": "btn-outline-action",
+    "text": "Download EoA PDF",
+    "line": 1011,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-outline-action",
+    "text": "View Affiliation Order",
+    "line": 1018,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-outline-action",
+    "text": "View Safety Certificate",
+    "line": 1025,
+    "reason": ""
+  },
+  {
+    "id": "btnFetchResult",
+    "className": "btn-primary-action",
+    "text": "Verify &amp; Display Grade Sheet",
+    "line": 1668,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-outline-action",
+    "text": "Print Official Grade Card",
+    "line": 1756,
+    "reason": ""
+  },
+  {
+    "id": "btnCheckAttendance",
+    "className": "btn-primary-action btn-att-check",
+    "text": "Verify Attendance Status",
+    "line": 1804,
+    "reason": ""
+  },
+  {
+    "id": "btnAttSlipPrintDirect",
+    "className": "btn-modal-action",
+    "text": "Print Official Certificate",
+    "line": 2142,
+    "reason": ""
+  },
+  {
+    "id": "btnSubmitGrievance",
+    "className": "btn-primary-action",
+    "text": "Submit Grievance to Dean Office",
+    "line": 2200,
+    "reason": "form submit/search candidate"
+  },
+  {
+    "id": null,
+    "className": "btn-outline-action btn-dl-syllabus",
+    "text": "Download Syllabus PDF",
+    "line": 2317,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-outline-action btn-dl-syllabus",
+    "text": "Download Syllabus PDF",
+    "line": 2323,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-outline-action btn-dl-syllabus",
+    "text": "Download Syllabus PDF",
+    "line": 2329,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-outline-action btn-dl-syllabus",
+    "text": "Download Syllabus PDF",
+    "line": 2335,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-outline-action btn-dl-syllabus",
+    "text": "Download Syllabus PDF",
+    "line": 2341,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-primary-action",
+    "text": "Submit Guest House Booking Request",
+    "line": 2733,
+    "reason": "form submit/search candidate"
+  },
+  {
+    "id": null,
+    "className": "btn-primary-action",
+    "text": "Download Placement Brochure 2026-27 (PDF)",
+    "line": 2962,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-outline-action",
+    "text": "Print Schedule",
+    "line": 3031,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-modal-action",
+    "text": "Print Official Circular",
+    "line": 3090,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-modal-action",
+    "text": "Print NIT Summary",
+    "line": 3133,
+    "reason": ""
+  },
+  {
+    "id": null,
+    "className": "btn-modal-action",
+    "text": "Print Official Form",
+    "line": 3155,
+    "reason": ""
+  },
+  {
+    "id": "btnModalPrint",
+    "className": "btn-modal-action",
+    "text": "Print Circular",
+    "line": 3223,
+    "reason": ""
+  }
+]
