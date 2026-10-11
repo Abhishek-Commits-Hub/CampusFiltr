@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Attendance Dashboard</title>
+  <style>
+    :root {
+      --navy: #0f4c81;
+      --navy-dark: #0c2a48;
+      --bg: #f4f8fc;
+      --panel: #ffffff;
+      --muted: #64748b;
+      --border: #dfeaf5;
+      --green: #1f9d62;
+      --red: #d64f4f;
+      --amber: #d9a13c;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #edf5ff 0%, #f9fbff 100%);
+      color: #12253a;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 18px 52px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 22px;
+      box-shadow: 0 8px 24px rgba(15, 76, 129, 0.07);
+      margin-bottom: 22px;
+    }
+
+    .title-block h1 {
+      margin: 0;
+      color: var(--navy-dark);
+      font-size: clamp(24px, 3vw, 34px);
+    }
+
+    .title-block p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .logout-btn,
+    .submit-btn {
+      border: none;
+      background: var(--navy);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background: var(--green);
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .sheet-meta {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .meta-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      box-shadow: 0 8px 24px rgba(15, 76, 129, 0.05);
+    }
+
+    .meta-card label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .meta-card input {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+      color: var(--navy-dark);
+      background: #fff;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 16px;
+      box-shadow: 0 8px 24px rgba(15, 76, 129, 0.05);
+    }
+
+    .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .value {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--navy-dark);
+    }
+
+    .attendance-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15, 76, 129, 0.06);
+    }
+
+    .attendance-table th,
+    .attendance-table td {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 12px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .attendance-table th {
+      background: #f2f7fc;
+      color: var(--navy-dark);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .row-id {
+      font-weight: 700;
+      color: var(--navy-dark);
+    }
+
+    .status {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .status.present {
+      background: rgba(31, 157, 98, 0.12);
+      color: var(--green);
+    }
+
+    .status.absent {
+      background: rgba(214, 79, 79, 0.12);
+      color: var(--red);
+    }
+
+    .attendance-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 600;
+      color: var(--navy-dark);
+    }
+
+    .attendance-toggle input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--green);
+      cursor: pointer;
+    }
+
+    @media (max-width: 680px) {
+      .sheet-meta,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .attendance-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div class="title-block">
+        <h1>Attendance Dashboard</h1>
+        <p>Departmental class attendance tracking</p>
+      </div>
+      <div class="topbar-actions">
+        <button class="submit-btn" id="submitAttendanceButton" type="button">Submit Attendance</button>
+        <button class="logout-btn" id="logoutButton" type="button">Logout</button>
+      </div>
+    </div>
+
+    <div class="sheet-meta">
+      <div class="meta-card">
+        <label for="attendanceDate">Date</label>
+        <input id="attendanceDate" type="date" />
+      </div>
+      <div class="meta-card">
+        <label for="attendanceSubject">Subject</label>
+        <input id="attendanceSubject" type="text" placeholder="e.g. Data Structures" />
+      </div>
+      <div class="meta-card">
+        <label for="attendanceBranch">Branch</label>
+        <input id="attendanceBranch" type="text" placeholder="e.g. CSE" />
+      </div>
+      <div class="meta-card">
+        <label for="attendanceProfessor">Professor Name</label>
+        <input id="attendanceProfessor" type="text" placeholder="e.g. Prof. R. Sharma" />
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <span class="label">Present</span>
+        <span class="value" id="presentCount">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="label">Absent</span>
+        <span class="value" id="absentCount">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="label">Total</span>
+        <span class="value" id="totalCount">0</span>
+      </div>
+    </div>
+
+    <table class="attendance-table" aria-label="Student attendance list">
+      <thead>
+        <tr>
+          <th>Roll No.</th>
+          <th>Student Name</th>
+          <th>Attendance</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="studentTableBody"></tbody>
+    </table>
+  </div>
+
+  <script>
+    (function () {
+      const loginKey = 'bitAdminLoggedIn';
+      if (localStorage.getItem(loginKey) !== 'true') {
+        window.location.href = 'index.html#administration/sign-in';
+        return;
+      }
+
+      const students = [
+        'Aarav Kumar', 'Ananya Singh', 'Arjun Verma', 'Bhavna Sharma', 'Chirag Rao',
+        'Diya Patel', 'Harsh Mehta', 'Ishita Nair', 'Karan Das', 'Lavanya Reddy',
+        'Manish Suri', 'Neha Gupta', 'Om Prakash', 'Pooja Mishra', 'Rahul Jha',
+        'Sakshi Roy', 'Tanvi Sen', 'Udit Yadav', 'Vivek Tiwari', 'Yash Khanna',
+        'Aditi Banerjee', 'Rohit Sharma', 'Sneha Joshi', 'Mohan Bera', 'Priya Sinha',
+        'Aditya Roy', 'Nandini Shah', 'Rishabh Kumar', 'Swati Singh', 'Varun Das',
+        'Suman Verma', 'Deepika Nanda', 'Akash Shaw', 'Meera Pandey', 'Prateek Ghosh',
+        'Shreya Sen', 'Nikhil Jha', 'Pallavi Agarwal', 'Siddharth Sahu', 'Ritika Gupta'
+      ];
+
+      const storageKey = 'bitStudentAttendance';
+      const attendanceMetaKey = 'bitAttendanceSheetMeta';
+      const tableBody = document.getElementById('studentTableBody');
+      const presentCountEl = document.getElementById('presentCount');
+      const absentCountEl = document.getElementById('absentCount');
+      const totalCountEl = document.getElementById('totalCount');
+      const dateInput = document.getElementById('attendanceDate');
+      const subjectInput = document.getElementById('attendanceSubject');
+      const branchInput = document.getElementById('attendanceBranch');
+      const professorInput = document.getElementById('attendanceProfessor');
+      const logoutButton = document.getElementById('logoutButton');
+      const submitAttendanceButton = document.getElementById('submitAttendanceButton');
+
+      function loadSheetMeta() {
+        try {
+          return JSON.parse(localStorage.getItem(attendanceMetaKey) || '{}');
+        } catch (error) {
+          return {};
+        }
+      }
+
+      function saveSheetMeta(meta) {
+        localStorage.setItem(attendanceMetaKey, JSON.stringify(meta));
+      }
+
+      function loadAttendance() {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey) || '{}');
+        } catch (error) {
+          return {};
+        }
+      }
+
+      function saveAttendance(data) {
+        localStorage.setItem(storageKey, JSON.stringify(data));
+      }
+
+      function updateSummary(attendance) {
+        let present = 0;
+        for (const key in attendance) {
+          if (attendance[key]) present += 1;
+        }
+        const total = students.length;
+        const absent = total - present;
+
+        presentCountEl.textContent = present;
+        absentCountEl.textContent = absent;
+        totalCountEl.textContent = total;
+      }
+
+      function renderTable() {
+        const attendance = loadAttendance();
+        const meta = loadSheetMeta();
+
+        dateInput.value = meta.date || new Date().toISOString().slice(0, 10);
+        subjectInput.value = meta.subject || '';
+        branchInput.value = meta.branch || '';
+        professorInput.value = meta.professor || '';
+
+        tableBody.innerHTML = students.map((student, index) => {
+          const rollNo = 25000 + index + 1;
+          const studentKey = `student-${index + 1}`;
+          const isPresent = !!attendance[studentKey];
+
+          return `
+            <tr>
+              <td class="row-id">${rollNo}</td>
+              <td>${student}</td>
+              <td>
+                <label class="attendance-toggle">
+                  <input type="checkbox" data-student="${studentKey}" ${isPresent ? 'checked' : ''}>
+                  <span>${isPresent ? 'Present' : 'Absent'}</span>
+                </label>
+              </td>
+              <td><span class="status ${isPresent ? 'present' : 'absent'}">${isPresent ? 'Present' : 'Absent'}</span></td>
+            </tr>
+          `;
+        }).join('');
+
+        updateSummary(attendance);
+      }
+
+      [dateInput, subjectInput, branchInput, professorInput].forEach((input) => {
+        input.addEventListener('input', function () {
+          saveSheetMeta({
+            date: dateInput.value,
+            subject: subjectInput.value.trim(),
+            branch: branchInput.value.trim(),
+            professor: professorInput.value.trim()
+          });
+        });
+      });
+
+      document.addEventListener('change', function (event) {
+        const checkbox = event.target;
+        if (!(checkbox instanceof HTMLInputElement) || !checkbox.dataset.student) return;
+
+        const attendance = loadAttendance();
+        attendance[checkbox.dataset.student] = checkbox.checked;
+        saveAttendance(attendance);
+
+        const row = checkbox.closest('tr');
+        const statusEl = row?.querySelector('.status');
+        const labelEl = row?.querySelector('.attendance-toggle span');
+
+        if (statusEl) {
+          statusEl.className = `status ${checkbox.checked ? 'present' : 'absent'}`;
+          statusEl.textContent = checkbox.checked ? 'Present' : 'Absent';
+        }
+
+        if (labelEl) {
+          labelEl.textContent = checkbox.checked ? 'Present' : 'Absent';
+        }
+
+        updateSummary(attendance);
+      });
+
+      submitAttendanceButton.addEventListener('click', function () {
+        const attendance = loadAttendance();
+        const meta = loadSheetMeta();
+        const payload = {
+          date: meta.date || dateInput.value || new Date().toISOString().slice(0, 10),
+          subject: meta.subject || subjectInput.value.trim(),
+          branch: meta.branch || branchInput.value.trim(),
+          professor: meta.professor || professorInput.value.trim(),
+          submittedAt: new Date().toISOString(),
+          totalStudents: students.length,
+          presentCount: Object.values(attendance).filter(Boolean).length,
+          absentCount: students.length - Object.values(attendance).filter(Boolean).length,
+          attendance
+        };
+
+        saveSheetMeta({
+          date: payload.date,
+          subject: payload.subject,
+          branch: payload.branch,
+          professor: payload.professor
+        });
+
+        localStorage.setItem('bitAttendanceSystem', JSON.stringify(payload));
+        alert('Attendance submitted to the website attendance system.');
+      });
+
+      logoutButton.addEventListener('click', function () {
+        localStorage.removeItem(loginKey);
+        window.location.href = 'index.html#administration/sign-in';
+      });
+
+      renderTable();
+    })();
+  </script>
+</body>
+</html>

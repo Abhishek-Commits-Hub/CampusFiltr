@@ -2463,6 +2463,11 @@ button {
   position: relative;
 }
 
+#resultOtpSection[hidden],
+#marksheetContainer[hidden] {
+  display: none !important;
+}
+
 .marksheet-header {
   text-align: center;
   border-bottom: 2px solid var(--color-navy-dark);
@@ -3762,4 +3767,3 @@ button {
     gap: 24px;
   }
 }
-

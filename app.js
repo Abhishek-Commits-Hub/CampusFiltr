@@ -916,7 +916,7 @@
     },
     'administration': {
       containerId: 'adminSectionContainer', name: 'Administration', current: 'Offices', defaultSubtab: 'admin-offices',
-      subtabs: { 'offices': 'admin-offices', 'mandatory-disclose': 'admin-mandatory', 'teqip': 'admin-teqip', 'tenders': 'admin-tenders', 'rti': 'admin-rti', 'infrastructure': 'admin-infrastructure' }
+      subtabs: { 'offices': 'admin-offices', 'mandatory-disclose': 'admin-mandatory', 'teqip': 'admin-teqip', 'tenders': 'admin-tenders', 'rti': 'admin-rti', 'infrastructure': 'admin-infrastructure', 'sign-in': 'admin-signin' }
     },
     'academics': {
       containerId: 'academicsSectionContainer', name: 'Academics', current: 'Departments', defaultSubtab: 'academics-departments',
@@ -1304,14 +1304,37 @@
     const form = $('resultSearchForm');
     if (!form) return;
 
+    const demoOtp = '123456';
+    const otpSection = $('resultOtpSection');
+    const otpInput = $('inputResultOtp');
+    const otpStatus = $('resultOtpStatus');
+    const marksheet = $('marksheetContainer');
+    if (otpSection) otpSection.hidden = true;
+    if (marksheet) marksheet.hidden = true;
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (!otpSection || !otpInput || !marksheet) return;
+      marksheet.hidden = true;
+      otpInput.value = '';
+      if (otpStatus) {
+        otpStatus.innerHTML = `Demo OTP: <strong>${demoOtp}</strong>. This code is for local testing only; no SMS is sent.`;
+      }
+      otpSection.hidden = false;
+      otpInput.focus();
+    });
+
+    $('btnVerifyResultOtp')?.addEventListener('click', () => {
+      if (!otpInput || !otpStatus || !marksheet) return;
+      if (!otpInput.reportValidity()) return;
+      if (otpInput.value.trim() !== demoOtp) {
+        otpStatus.textContent = 'Incorrect demo OTP. Please enter 123456.';
+        otpInput.focus();
+        return;
+      }
+
       const roll = $('inputRollNo')?.value?.trim() || '23042';
       const sem = $('selectResultSem')?.value || '3';
-      const marksheet = $('marksheetContainer');
-      if (!marksheet) return;
-
-      marksheet.style.display = 'block';
       $('resStudentName').textContent = roll === '23042' ? 'RAJA KUMAR SHAW' : `STUDENT (ROLL ${roll})`;
       $('resRollNo').textContent = roll;
       $('resBranch').textContent = 'Computer Science & Engineering';
@@ -1333,6 +1356,8 @@
 
       $('resSgpa').textContent = '8.75';
       $('resCgpa').textContent = '8.62';
+      otpStatus.textContent = 'Demo OTP verified. The sample grade sheet is shown below.';
+      marksheet.hidden = false;
     });
   }
 

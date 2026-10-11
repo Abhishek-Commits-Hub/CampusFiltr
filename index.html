@@ -89,6 +89,7 @@
               <a href="#administration/tenders" class="dropdown-item">Tenders &amp; Quotations</a>
               <a href="#administration/rti" class="dropdown-item">Right To Information (RTI)</a>
               <a href="#administration/infrastructure" class="dropdown-item">New Added Infrastructure</a>
+              <a href="#administration/sign-in" class="dropdown-item">Admin Sign In Dashboard</a>
             </div>
           </li>
 
@@ -867,6 +868,7 @@
         <button type="button" class="subnav-btn" data-subtab="admin-teqip">TEQIP Phase III</button>
         <button type="button" class="subnav-btn" data-subtab="admin-rti">Right to Information (RTI)</button>
         <button type="button" class="subnav-btn" data-subtab="admin-infrastructure">New Infrastructure</button>
+        <button type="button" class="subnav-btn" data-subtab="admin-signin">Admin Sign In</button>
       </nav>
 
       <!-- Subtab: Offices -->
@@ -1097,6 +1099,73 @@
             <h4 class="portal-card-title">Modern PG Hostels</h4>
             <div class="portal-card-body">
               <p>Newly inaugurated 500-bed Boys and 300-bed Girls PG halls with high-speed Wi-Fi, indoor badminton courts, and mechanized dining halls.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtab: Admin Sign In Dashboard -->
+      <div class="subtab-panel" id="admin-signin">
+        <div class="portal-card" style="border: 1px solid rgba(15, 76, 129, 0.12); box-shadow: 0 10px 30px rgba(15, 38, 66, 0.08);">
+          <div class="portal-card-header">
+            <h3 class="portal-card-title">Administrative Sign In Dashboard</h3>
+            <span class="badge-status active">Secure Access</span>
+          </div>
+          <div class="portal-card-body" style="display: grid; grid-template-columns: minmax(260px, 1fr) minmax(260px, 1.35fr); gap: 24px; align-items: start;">
+            <div style="background: linear-gradient(180deg, #F8FBFF 0%, #EEF6FF 100%); border: 1px solid rgba(15, 76, 129, 0.1); border-radius: 16px; padding: 20px;">
+              <h4 style="margin: 0 0 16px; color: var(--color-navy-dark); font-size: 18px;">Admin Login</h4>
+              <form id="adminLoginForm" style="display: grid; gap: 14px;">
+                <div>
+                  <label style="display: block; margin-bottom: 6px; font-weight: 600; color: var(--color-navy-dark); font-size: 13px;">Username</label>
+                  <input type="text" id="adminUsername" value="admin.portal" style="width: 100%; box-sizing: border-box; border: 1px solid #CBD5E1; border-radius: 10px; padding: 10px 12px; font: inherit; background: #fff;" aria-label="Username">
+                </div>
+                <div>
+                  <label style="display: block; margin-bottom: 6px; font-weight: 600; color: var(--color-navy-dark); font-size: 13px;">Password</label>
+                  <input type="password" id="adminPassword" value="admin123" style="width: 100%; box-sizing: border-box; border: 1px solid #CBD5E1; border-radius: 10px; padding: 10px 12px; font: inherit; background: #fff;" aria-label="Password">
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--color-text-muted);">
+                  <label style="display: inline-flex; align-items: center; gap: 8px; margin: 0;">
+                    <input type="checkbox" checked>
+                    Keep me signed in
+                  </label>
+                  <a href="#helpdesk" style="color: var(--color-navy-dark); text-decoration: none; font-weight: 600;">Need help?</a>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 8px;">Sign In to Dashboard</button>
+              </form>
+            </div>
+
+            <div style="display: grid; gap: 16px;">
+              <div class="portal-grid-2" style="gap: 12px;">
+                <div style="background: #F8FAFC; border: 1px solid rgba(15, 76, 129, 0.1); border-radius: 12px; padding: 16px;">
+                  <div style="font-size: 12px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Faculty</div>
+                  <div style="font-size: 28px; font-weight: 800; color: var(--color-navy-dark); margin-top: 6px;">482</div>
+                </div>
+                <div style="background: #F8FAFC; border: 1px solid rgba(15, 76, 129, 0.1); border-radius: 12px; padding: 16px;">
+                  <div style="font-size: 12px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Students</div>
+                  <div style="font-size: 28px; font-weight: 800; color: var(--color-navy-dark); margin-top: 6px;">8,420</div>
+                </div>
+                <div style="background: #F8FAFC; border: 1px solid rgba(15, 76, 129, 0.1); border-radius: 12px; padding: 16px;">
+                  <div style="font-size: 12px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Tenders</div>
+                  <div style="font-size: 28px; font-weight: 800; color: var(--color-navy-dark); margin-top: 6px;">15</div>
+                </div>
+                <div style="background: #F8FAFC; border: 1px solid rgba(15, 76, 129, 0.1); border-radius: 12px; padding: 16px;">
+                  <div style="font-size: 12px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Notices</div>
+                  <div style="font-size: 28px; font-weight: 800; color: var(--color-navy-dark); margin-top: 6px;">36</div>
+                </div>
+              </div>
+
+              <div style="background: #F8FAFC; border: 1px solid rgba(15, 76, 129, 0.1); border-radius: 12px; padding: 18px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px;">
+                  <strong style="font-size: 14px; color: var(--color-navy-dark);">System Health</strong>
+                  <span class="badge-status active">Online</span>
+                </div>
+                <div style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.7;">
+                  ERP uptime: <strong style="color: var(--color-navy-dark);">99.8%</strong><br>
+                  Hostel records sync: <strong style="color: var(--color-navy-dark);">Every 5 min</strong><br>
+                  Tender approvals: <strong style="color: var(--color-navy-dark);">7 pending review</strong><br>
+                  Last backup: <strong style="color: var(--color-navy-dark);">Today, 04:30 AM</strong>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1664,6 +1733,10 @@
                 </select>
               </div>
             </div>
+            <div class="form-group-custom" style="margin-bottom: 16px;">
+              <label for="inputResultPhone">Phone Number (for OTP verification)</label>
+              <input type="tel" id="inputResultPhone" placeholder="Enter registered phone number" autocomplete="tel" required>
+            </div>
             <div style="text-align: center;">
               <button type="submit" class="btn-primary-action" id="btnFetchResult">
                 <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
@@ -1675,8 +1748,25 @@
           </form>
         </div>
 
+        <div class="results-search-card" id="resultOtpSection" hidden>
+          <div style="text-align: center; margin-bottom: 16px;">
+            <h3 style="font-size: 18px; color: var(--color-navy-dark); font-weight: 700;">OTP Verification</h3>
+            <p style="font-size: 12.5px; color: var(--color-text-muted);">Enter the 6-digit OTP to continue to your grade sheet.</p>
+          </div>
+          <div class="form-group-custom" style="margin-bottom: 16px;">
+            <label for="inputResultOtp">One-Time Password</label>
+            <input type="text" id="inputResultOtp" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="Enter 6-digit OTP" required>
+          </div>
+          <div style="text-align: center;">
+            <button type="button" class="btn-primary-action" id="btnVerifyResultOtp">Verify OTP</button>
+          </div>
+          <p id="resultOtpStatus" role="status" aria-live="polite" style="font-size: 12.5px; color: var(--color-text-muted); text-align: center; margin: 12px 0 0;">
+            Demo OTP: <strong>123456</strong>. This code is for local testing only; no SMS is sent.
+          </p>
+        </div>
+
         <!-- Grade Sheet Output Card -->
-        <div class="marksheet-display" id="marksheetContainer">
+        <div class="marksheet-display" id="marksheetContainer" hidden>
           <div class="marksheet-header">
             <h3>JHARKHAND UNIVERSITY OF TECHNOLOGY, RANCHI</h3>
             <p>Birsa Institute of Technology, Sindri · Examination Section</p>
@@ -3523,6 +3613,26 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      const form = document.getElementById('adminLoginForm');
+      if (!form) return;
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const username = document.getElementById('adminUsername')?.value.trim();
+        const password = document.getElementById('adminPassword')?.value.trim();
+
+        if (!username || !password) {
+          alert('Please enter username and password.');
+          return;
+        }
+
+        localStorage.setItem('bitAdminLoggedIn', 'true');
+        window.location.href = 'admin-attendance.html';
+      });
+    })();
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
